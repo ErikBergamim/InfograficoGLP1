@@ -1,6 +1,6 @@
 # Infográfico Interativo
 
-Infográfico interativo feito com **HTML** e **Chart.js**, que mostra estatísticas reais sobre **Uso crescente de medicamentos agonistas do GLP-1** — tema relacionado à **Industria Farmacêutica**.
+Infográfico interativo feito com **HTML** e **Chart.js**, que mostra estatísticas reais sobre **uso crescente de medicamentos agonistas do GLP-1** — tema relacionado à **Industria Farmacêutica**.
 
 - **O gráfico de linha** mostra o enorme salto no uso desses medicamentos nos últimos anos, com destaque especial para o **crescimento projetado em 120 bilhões até 2030**.
 
