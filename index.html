@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado de Medicamentos GLP-1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .highlight-box h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .highlight-box p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        .chart-container {
+            position: relative;
+            margin: 40px 0;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 15px;
+        }
+        .chart-title {
+            color: #2d3748;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .info-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        .info-card h3 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .info-card p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        .source {
+            text-align: center;
+            color: #718096;
+            font-size: 0.9em;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ATIVIDADE DE EXTENSÃO UNIP</h1>
+        <p class="subtitle">Uso Crescente dos Medicamentos GLP-1</p>
+        
+        <div class="highlight-box">
+            <h2>US$ 150 Bilhões</h2>
+            <p>Projeção do mercado de GLP-1 até 2030 (PwC)</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h3>41%</h3>
+                <p>Crescimento projetado de Mounjaro em 2025</p>
+            </div>
+            <div class="info-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <h3>25%</h3>
+                <p>Crescimento projetado de Ozempic em 2025</p>
+            </div>
+            <div class="info-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                <h3>24,2%</h3>
+                <p>Perda média de peso com Retatrutida (12mg)</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-title">Projeção do Mercado Global de GLP-1</div>
+            <canvas id="marketChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-title">Crescimento Projetado das Principais Fabricantes em 2025</div>
+            <canvas id="companiesChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-title">Medicamentos GLP-1 Mais Utilizados no Mercado</div>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+        <div style="background: #f7fafc; padding: 30px; border-radius: 15px; margin: 30px 0; text-align: justify; line-height: 1.8;">
+            <h3 style="color: #2d3748; margin-bottom: 20px; text-align: center;">REFLEXÕES FINAIS</h3>
+            
+            <p style="color: #4a5568; margin-bottom: 15px; text-indent: 60px;">
+                Recentemente, podemos notar o uso crescente no uso de medicamentos voltados ao emagrecimento, da classe dos agonistas do GLP-1, seu uso se dá principalmente por sua eficiência em abaixar a glicemia e rápido emagrecimento (MOIZ, 2025). Segundo um estudo recente feito por Jonathan Watanabe, publicado no site governamental <a href="https://pubmed.ncbi.nlm.nih.gov/39892489/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">PubMed</a>, as taxas de crescimento mensais foram de 83,9% no uso do <a href="https://pubmed.ncbi.nlm.nih.gov/39892489/" target="_blank" style="color: #667eea;">Ozempic</a> e 119,2% no uso do <a href="https://pubmed.ncbi.nlm.nih.gov/39892489/" target="_blank" style="color: #667eea;">Wegovy</a>. Medicamentos dessa classe possuem uma série de efeitos adversos, e por conta disso, a Anvisa passou a exigir receita médica para aquisição desses medicamentos (ANVISA, 2025).
+            </p>
+            
+            <p style="color: #4a5568; margin-bottom: 15px; text-indent: 60px;">
+                Em paralelo a isso, um medicamento dessa mesma classe, porém com uma potência de efeitos muito superior acabou surgindo, com o nome <strong>retatrutida</strong>. Ele atua em três tipos de hormônios diferentes, no GIP, GLP e no Glucagon, podendo ter uma capacidade de redução de peso de até 24% do peso corporal (DR EDUARDO, 2023). Seu uso ganhou popularidade principalmente por fisiculturistas, que vem fazendo uso off-label deles principalmente pelas propriedades de aumento da saciedade.
+            </p>
+            
+            <h4 style="color: #2d3748; margin: 25px 0 15px 0; text-align: center;">REFERÊNCIAS</h4>
+            
+            <div style="font-size: 0.9em; color: #4a5568;">
+                <p style="margin-bottom: 12px;">
+                    <strong>MOIZ, Areesha.</strong> Mechanisms of GLP-1 Receptor Agonist-Induced Weight Loss: A Review of Central and Peripheral Pathways in Appetite and Energy Regulation. 2025. Disponível em: <a href="https://pubmed.ncbi.nlm.nih.gov/39892489/" target="_blank" style="color: #667eea;">https://pubmed.ncbi.nlm.nih.gov/39892489/</a> Acesso em: 02 out. 2025.
+                </p>
+                
+                <p style="margin-bottom: 12px;">
+                    <strong>ANVISA.</strong> Medicamentos agonistas GLP-1 só poderão ser vendidos com retenção da receita. Brasília: Anvisa, 2025. Disponível em: <a href="https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2025/canetas-emagrecedoras-so-poderao-ser-vendidas-com-retencao-de-receita" target="_blank" style="color: #667eea;">https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2025/canetas-emagrecedoras-so-poderao-ser-vendidas-com-retencao-de-receita</a> Acesso em: 03 out. 2025.
+                </p>
+                
+                <p style="margin-bottom: 12px;">
+                    <strong>DR. EDUARDO.</strong> Retatrutida: nova medicação para obesidade e diabetes tipo 2 com perda de até 24% do peso. 2023. Disponível em: <a href="https://www.dreduardoendocrino.com.br/retatrutida-vs-semaglutida-vs-tirzepatida-comparando-tres-medicacoes-promissoras-para-o-tratamento-da-obesidade?" target="_blank" style="color: #667eea;">https://www.dreduardoendocrino.com.br/retatrutida-vs-semaglutida-vs-tirzepatida-comparando-tres-medicacoes-promissoras-para-o-tratamento-da-obesidade?utm_source=chatgpt.com</a> Acesso em: 03 out. 2025.
+                </p>
+            </div>
+        </div>
+        
+        <div style="background: #2d3748; color: white; padding: 30px; border-radius: 0 0 20px 20px; margin: 30px -40px -40px -40px; text-align: center; font-size: 0.95em; line-height: 1.8;">
+            <p style="margin-bottom: 10px;">
+                <strong>Fontes:</strong> PwC, Medicina S/A, Dr. Eduardo Henrique, Bloomberg Brasil, Muscle Show Magazine, ICTQ, Panorama Farmacêutico, Healthcare Brew, PubMed, ANVISA
+            </p>
+            <p style="margin-bottom: 10px;">
+                <strong>Última atualização:</strong> Outubro 2025 | <strong>Dados:</strong> Q1 2025
+            </p>
+            <p style="margin: 0;">
+                <strong>Infográfico por:</strong> Erik Bergamim e Leandro Silva
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const marketCtx = document.getElementById('marketChart').getContext('2d');
+        new Chart(marketCtx, {
+            type: 'line',
+            data: {
+                labels: ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                datasets: [{
+                    label: 'Valor do Mercado (US$ Bilhões)',
+                    data: [30, 50, 70, 90, 110, 130, 140, 150],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#667eea',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            font: { size: 14 }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return 'US$ ' + value + 'B';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const companiesCtx = document.getElementById('companiesChart').getContext('2d');
+        new Chart(companiesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Empresa Farmacêutica: Eli Lilly', 'Empresa Farmacêutica: Novo Nordisk'],
+                datasets: [{
+                    label: 'Crescimento Projetado em 2025',
+                    data: [41, 25],
+                    backgroundColor: [
+                        'rgba(67, 233, 123, 0.8)',
+                        'rgba(79, 172, 254, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(67, 233, 123, 1)',
+                        'rgba(79, 172, 254, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            font: { size: 14 }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: [
+                    'Ozempic (Novo Nordisk)', 
+                    'Wegovy (Novo Nordisk)', 
+                    'Mounjaro (Eli Lilly)',
+                    'Outros GLP-1'
+                ],
+                datasets: [{
+                    data: [5.0, 2.6, 3.8, 0.6],
+                    backgroundColor: [
+                        'rgba(79, 172, 254, 0.9)',
+                        'rgba(59, 130, 246, 0.9)',
+                        'rgba(67, 233, 123, 0.9)',
+                        'rgba(156, 163, 175, 0.9)'
+                    ],
+                    borderColor: [
+                        'rgba(79, 172, 254, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(67, 233, 123, 1)',
+                        'rgba(156, 163, 175, 1)'
+                    ],
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: { size: 13 },
+                            padding: 15
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += 'US$ ' + context.parsed.toFixed(1) + ' bilhões (Q1 2025)';
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
