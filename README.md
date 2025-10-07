@@ -4,7 +4,7 @@ Infográfico interativo feito com **HTML** e **Chart.js**, que mostra estatísti
 
 - **O gráfico de linha** mostra o enorme salto no uso desses medicamentos nos últimos anos, com destaque especial para o **crescimento projetado em 120 bilhões até 2030**.
 
-- **O gráfico de barras verticais** mostra a taxa de crescimento das duas principais empresas fabricantes desses medicamentos, ** a Novo Nordisk e a Eli Lilly**.
+- **O gráfico de barras verticais** mostra a taxa de crescimento das duas principais empresas fabricantes desses medicamentos, **a Novo Nordisk e a Eli Lilly**.
 
 - **O gráfico de pizza** detalha quais são os **principais medicamentos** utilizados no mercado.
 
