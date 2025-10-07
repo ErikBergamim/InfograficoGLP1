@@ -27,6 +27,6 @@ Infográfico interativo feito com **HTML** e **Chart.js**, que mostra estatísti
 - Healthcare Brew: https://www.healthcare-brew.com/stories/2025/05/08/eli-lilly-novo-nordisk-strong-earnings-glp-1
 - Muscle Show Magazine: https://muscleshowmag.com/en/retatrutida-a-nova-promessa-e-polemica-no-mundo-do-fisiculturismo/
 
-- ### Artigos Científicos:
+### Artigos Científicos:
 - Artigo 1: https://www.dreduardoendocrino.com.br/retatrutida-nova-medicacao-para-obesidade-e-diabetes-tipo-2-com-perda-de-ate-24-do-peso
 - Artigo 2: https://dred.com.br/retatrutida-nova-medicacao-para-obesidade/
